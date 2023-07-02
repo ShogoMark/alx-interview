@@ -1,6 +1,13 @@
 #!/usr/bin/python3
 
 def pascal_triangle(n):
+"""
+    Generates Pascal's Triangle with the specified number of rows.
+	Args:
+    n (int): The number of rows in Pascal's Triangle.
+	Returns:
+        list: Pascal's Triangle represented as a list of lists.
+	"""
     res = []
 
     if n > 0:
