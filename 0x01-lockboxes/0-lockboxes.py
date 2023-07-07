@@ -4,7 +4,6 @@
 
 def canUnlockAll(boxes):
 """Method that determines if all the boxes can be opened"""
-
     matches = []
 
     for i in range(len(boxes)):
@@ -28,10 +27,5 @@ def canUnlockAll(boxes):
             else:
                 continue
             break
-
-if all(matches):
-    result = True
-else:
-    result = False
-
-print(result)
+    
+    return all(matches)
