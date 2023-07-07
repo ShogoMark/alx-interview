@@ -4,6 +4,7 @@
 
 def canUnlockAll(boxes):
     """Method that determines if all the boxes can be opened"""
+    
     matches = []
 
     for i in range(len(boxes)):
@@ -15,13 +16,9 @@ def canUnlockAll(boxes):
             for k in range(i + 1, len(boxes)):
                 other_box = boxes[k]
 
-                for other_boxes in other_box:
-                    if current_item == other_boxes:
-                        matches.append(True)
-                        break
-                else:
-                    continue
-                break
+                if i != k and current_item in other_box:
+                    matches.append(True)
+                    break
             else:
                 continue
             break
