@@ -15,10 +15,8 @@ def canUnlockAll(boxes):
             for k in range(i + 1, len(boxes)):
                 other_box = boxes[k]
 
-                for other_boxes in range(len(other_box)):
-                    other_item = other_box[other_boxes]
-
-                    if current_item == other_box:
+                for other_boxes in other_box:
+                    if current_item == other_boxes:
                         matches.append(True)
                         break
                 else:
