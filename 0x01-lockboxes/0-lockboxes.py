@@ -3,13 +3,13 @@
 
 
 def canUnlockAll(boxes):
-"""Method that determines if all the boxes can be opened"""
+    """Method that determines if all the boxes can be opened"""
     matches = []
 
     for i in range(len(boxes)):
         current_box = boxes[i]
 
-        for j in range(len(current_list)):
+        for j in range(len(current_box)):
             current_item = current_box[j]
 
             for k in range(i + 1, len(boxes)):
