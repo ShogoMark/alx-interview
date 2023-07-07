@@ -27,5 +27,5 @@ def canUnlockAll(boxes):
             else:
                 continue
             break
-    
+
     return all(matches)
