@@ -9,7 +9,7 @@ def minOperations(n):
     copied_H = "H"
 
     highest_divisor = 1
-    for i in range(2, int(math.sqrt(n)) + 1): 
+    for i in range(2, int(math.sqrt(n)) + 1):
         if n % i == 0:
             highest_divisor = i
 
