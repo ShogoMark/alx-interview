@@ -5,6 +5,8 @@ import math
 
 
 def minOperations(n):
+    """function that takes in a number n of H to copy"""
+
     total_op = 0
     copied_H = "H"
 
