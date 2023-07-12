@@ -11,13 +11,14 @@ def minOperations(n):
     copied_H = "H"
 
     highest_divisor = 1
-    for i in range(2, int(math.sqrt(n)) + 1):
+    for i in range(2, n // 2 + 1):
         if n % i == 0:
             highest_divisor = i
             break
 
     if highest_divisor == 1:
         return 0
+
 
     while len(copied_H) <= highest_divisor:
         copied_H += copied_H
