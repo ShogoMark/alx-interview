@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """A method to determine if set of data is UTF8 encoding"""
 
+
 def validUTF8(data):
     i = 0
 
@@ -11,13 +12,13 @@ def validUTF8(data):
         leading_byte = data[i]
 
         # Determine the number of bytes used for the current character
-        if leading_byte & 0x80 == 0: # Single byte character (starts with 0)
+        if leading_byte & 0x80 == 0:  # Single byte character
             num_bytes = 1
-        elif leading_byte & 0xE0 == 0xC0:# Two-byte character (starts with 110)
+        elif leading_byte & 0xE0 == 0xC0:  # Two-byte character
             num_bytes = 2
-        elif leading_byte & 0xF0 == 0xE0:# Three-byte character (starts with 1110)
+        elif leading_byte & 0xF0 == 0xE0:  # Three-byte character
             num_bytes = 3
-        elif leading_byte & 0xF8 == 0xF0:# Four-byte character (starts with 11110)
+        elif leading_byte & 0xF8 == 0xF0:  # Four-byte character
             num_bytes = 4
         else:
             # Invalid leading byte, not a valid UTF-8 encoding
@@ -35,5 +36,5 @@ def validUTF8(data):
         # Move to the next character
         i += num_bytes
 
-    # All bytes have been processed without any issues, so it's a valid UTF-8 encoding
+    # All bytes have been processed without any issues
     return True
