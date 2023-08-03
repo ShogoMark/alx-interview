@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 import sys
 
+
 def is_safe(board, row, col, N):
     # Check if a queen can be placed in the given cell
     for i in range(col):
@@ -16,6 +17,7 @@ def is_safe(board, row, col, N):
             return False
 
     return True
+
 
 def solve_nqueens(N):
     if not N.isdigit():
@@ -45,10 +47,10 @@ def solve_nqueens(N):
 
     backtrack(0)
 
+
 if __name__ == "__main__":
     if len(sys.argv) != 2:
         print("Usage: nqueens N")
         sys.exit(1)
 
     solve_nqueens(sys.argv[1])
-
