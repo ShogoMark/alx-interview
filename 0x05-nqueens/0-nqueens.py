@@ -30,13 +30,12 @@ def solve_nqueens(N):
         sys.exit(1)
 
     board = [[0 for _ in range(N)] for _ in range(N)]
+    solutions = []
 
     def backtrack(col):
         if col >= N:
-            for row in range(N):
-                queen_pos = [row, board[row].index(1)]
-                print(queen_pos, end=" ")
-            print()
+            solution = [[row, board[row].index(1)] for row in range(N)]
+            solutions.append(solution)
             return
 
         for row in range(N):
@@ -46,6 +45,11 @@ def solve_nqueens(N):
                 board[row][col] = 0
 
     backtrack(0)
+
+    for solution in sorted(solutions, key=lambda x: x[0][1]):
+        for queen_pos in solution:
+            print(queen_pos, end=" ")
+        print()
 
 
 if __name__ == "__main__":
