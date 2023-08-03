@@ -11,7 +11,7 @@ def is_safe(board, row, col, N):
         if board[i][j] == 1:
             return False
 
-    for i, j in zip(range(row, N, 1), range(col, -1, -1)):
+    for i, j in zip(range(row, N), range(col, -1, -1)):
         if board[i][j] == 1:
             return False
 
@@ -32,7 +32,8 @@ def solve_nqueens(N):
     def backtrack(col):
         if col >= N:
             for row in range(N):
-                print(" ".join(str(board[row][i]) for i in range(N)))
+                queen_pos = [row, board[row].index(1)]
+                print(queen_pos, end=" ")
             print()
             return
 
@@ -50,3 +51,4 @@ if __name__ == "__main__":
         sys.exit(1)
 
     solve_nqueens(sys.argv[1])
+
