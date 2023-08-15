@@ -19,7 +19,6 @@ def minOperations(n):
     if highest_divisor == 1:
         return 0
 
-
     while len(copied_H) <= highest_divisor:
         copied_H += copied_H
         total_op += 1
