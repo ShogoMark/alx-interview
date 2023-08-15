@@ -5,22 +5,16 @@ import math
 
 
 def minOperations(n):
-    """function that takes in a number n of H to copy"""
+    len_H = 1
+    len_copied_H = 0
+    total_operations = 0
 
-    total_op = 0
-    copied_H = "H"
-
-    highest_divisor = 1
-    for i in range(2, n // 2 + 1):
-        if n % i == 0:
-            highest_divisor = i
-            break
-
-    if highest_divisor == 1:
-        return 0
-
-    while len(copied_H) < n:
-        copied_H += copied_H
-        total_op += 1
-
-    return total_op
+    while len_H < n:
+        if n % len_H == 0:
+            total_operations += 2
+            len_copied_H = len_H
+            len_H *= 2
+        else:
+            total_operations += 1
+            len_H += len_copied_H
+    return total_operations
