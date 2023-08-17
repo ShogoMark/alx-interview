@@ -1,14 +1,15 @@
 #!/usr/bin/python3
 
 def rotate_2d_matrix(matrix):
-    values_at_index_0 = []
-    values_at_index_1 = []
-    values_at_index_2 = []
+    n = len(matrix)
 
-    for inner_list in reversed(matrix):
-        values_at_index_0.append(inner_list[0])
-        values_at_index_1.append(inner_list[1])
-        values_at_index_2.append(inner_list[2])
+    rotated_matrix = [[0] * n for _ in range(n)]
 
-    rotated_list = [values_at_index_0, values_at_index_1, values_at_index_2]
-    print(rotated_list)
+    for i in range(n):
+        rotated_matrix[i][0] = matrix[n - 1][i]
+        rotated_matrix[i][1] = matrix[n - 2][i]
+        rotated_matrix[i][2] = matrix[n - 3][i]
+
+    for i in range(n):
+        for j in range(n):
+            matrix[i][j] = rotated_matrix[i][j]
