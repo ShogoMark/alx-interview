@@ -1,6 +1,8 @@
 #!/usr/bin/python3
+"""Rotating a matrix through 90degree"""
 
 def rotate_2d_matrix(matrix):
+    """function takes in value of matrix"""
     n = len(matrix)
 
     rotated_matrix = [[0] * n for _ in range(n)]
