@@ -1,9 +1,10 @@
 #!/usr/bin/python3
 """function that calculate perimeter of island"""
 
+
 def island_perimeter(grid):
     """function take in grid of area"""
-    
+
     land = 0
 
     for i in range(0, len(grid)):
@@ -18,10 +19,10 @@ def island_perimeter(grid):
             if grid[i][j] == 1:
                 # check left neighbor
                 if j > 0 and grid[i][j - 1] == 1:
-                    perimeter -= 2 # subtract 2 for the shared edge
+                    perimeter -= 2  # subtract 2 for the shared edge
 
                 # check top neighbor
                 if i > 0 and grid[i - 1][j] == 1:
-                    perimeter -= 2 # subtract 2 for the shared edge
+                    perimeter -= 2  # subtract 2 for the shared edge
 
     return perimeter
