@@ -21,6 +21,7 @@ def can_win(nums):
 
 
 def isWinner(x, nums):
+    """Function returns winner that win most rounds"""
     maria_wins = 0
     ben_wins = 0
 
