@@ -19,6 +19,7 @@ def can_win(nums):
             return "Maria"
     return "Ben"
 
+
 def isWinner(x, nums):
     maria_wins = 0
     ben_wins = 0
