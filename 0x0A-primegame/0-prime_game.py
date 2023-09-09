@@ -25,6 +25,9 @@ def isWinner(x, nums):
     maria_wins = 0
     ben_wins = 0
 
+    if x < 1 or not nums:
+        return None
+
     for n in nums:
         if is_prime(n):
             if n == 2:
@@ -49,6 +52,8 @@ def isWinner(x, nums):
         return "Maria"
     elif maria_wins < ben_wins:
         return "Ben"
+    elif maria_wins == ben_wins:
+        return None
     else:
         winner = can_win(nums)
         if winner == "Maria" or winner == "Ben":
