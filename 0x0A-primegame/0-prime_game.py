@@ -17,7 +17,7 @@ def can_win(nums):
     for n in nums:
         if is_prime(n):
             return "Maria"
-    return None
+    return "Ben"
 
 
 def isWinner(x, nums):
