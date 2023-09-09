@@ -32,9 +32,26 @@ def isWinner(x, nums):
             else:
                 ben_wins += 1
 
+    round_count = 0
+
+    for n in nums:
+        if is_prime(n):
+            if n == 2:
+                maria_wins += 1
+            else:
+                ben_wins += 1
+
+        round_count += 1
+        if round_count >= x:
+            break
+
     if maria_wins > ben_wins:
         return "Maria"
     elif maria_wins < ben_wins:
         return "Ben"
     else:
-        return can_win(nums)
+        winner = can_win(nums)
+        if winner == "Maria" or winner == "Ben":
+            return winner
+        else:
+            return None
