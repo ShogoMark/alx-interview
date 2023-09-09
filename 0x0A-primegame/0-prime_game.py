@@ -52,8 +52,6 @@ def isWinner(x, nums):
         return "Maria"
     elif maria_wins < ben_wins:
         return "Ben"
-    elif maria_wins == ben_wins:
-        return None
     else:
         winner = can_win(nums)
         if winner == "Maria" or winner == "Ben":
